@@ -1,18 +1,21 @@
 import React from "react";
-import puzaIcon from "../assets/images/puzaIcon.png";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { onClickCoin, setCoinValue } from "../redux/puzaCoinSlice";
+import { Shop } from "../components/Shop";
 
 export const Home = () => {
-  const [value, setValue] = React.useState(0);
+  const dispatch = useDispatch();
+  const value = useSelector((state) => state.puzaCoinSlice.value);
 
   React.useEffect(() => {
     if (localStorage.getItem("value")) {
-      setValue(+localStorage.getItem("value"));
+      dispatch(setCoinValue(+localStorage.getItem("value")));
     }
   }, []);
 
   const addPuzaCoin = () => {
-    setValue(value + 1);
-    localStorage.setItem("value", value + 1);
+    dispatch(onClickCoin(value + 1));
   };
 
   const clearResult = () => {
@@ -21,12 +24,13 @@ export const Home = () => {
   };
 
   return (
-    <div className="homePage">
-      <p className="textValue">У Вас {value} PuzaCoin!</p>
-      <button onClick={addPuzaCoin} className="iconWrapper">
-        <img className="puzaIcon" src={puzaIcon} alt="" />
-      </button>
-      <button onClick={clearResult}>Очистить результат</button>
+    <div>
+      <div className="clickArea">
+        <p className="textValue">У Вас {value} PuzaCoin!</p>
+        <button onClick={addPuzaCoin} className="iconButton"></button>
+        <button onClick={clearResult}>Очистить результат</button>
+      </div>
+      <Shop />
     </div>
   );
 };

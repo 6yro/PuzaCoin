@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   background-image: url("https://phonoteka.org/uploads/posts/2021-05/1620923807_9-phonoteka_org-p-delovoi-fon-rabochego-stola-12.jpg");
   background-repeat: no-repeat;
@@ -7,13 +10,13 @@ body {
   align-items: center;
   justify-content: center;
 }
-.homePage {
+.clickArea {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.iconWrapper {
+.iconButton {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,17 +25,18 @@ body {
   width: 150px;
   height: 150px;
   background-color: #f49600;
+  background-image: url("./assets/images/puzaIcon.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 50%;
   filter: drop-shadow(0 0 40px #f48200);
   transition: 0.5s;
   border: none;
 }
-.iconWrapper:hover {
+.iconButton:hover {
   width: 180px;
   height: 180px;
-}
-.puzaIcon {
-  width: 100%;
 }
 
 .textValue {
