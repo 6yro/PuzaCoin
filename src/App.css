@@ -1,4 +1,19 @@
-.circle {
+body {
+  background-image: url("https://phonoteka.org/uploads/posts/2021-05/1620923807_9-phonoteka_org-p-delovoi-fon-rabochego-stola-12.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 98vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.iconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,6 +21,21 @@
   user-select: none;
   width: 150px;
   height: 150px;
-  background-color: #f4ca16;
+  background-color: #f49600;
   border-radius: 50%;
+  filter: drop-shadow(0 0 40px #f48200);
+  transition: 0.5s;
+  border: none;
+}
+.iconWrapper:hover {
+  width: 180px;
+  height: 180px;
+}
+.puzaIcon {
+  width: 100%;
+}
+
+.textValue {
+  color: #fff;
+  font-size: 32px;
 }
