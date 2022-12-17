@@ -23,10 +23,9 @@ export const ClickArea = () => {
   return (
     <div className="clickArea">
       <button onClick={addPuzaCoin} className="iconButton" />
-      {/* <button onClick={clearResult} className="clearResult">
+      <button onClick={clearResult} className="clearResult">
         Очистить результат
-      </button> */}
-      {/* <Shop /> */}
+      </button>
     </div>
   );
 };
