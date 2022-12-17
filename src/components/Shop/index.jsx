@@ -1,10 +1,13 @@
 import React from "react";
-import { PuzaClicker } from "./components/PuzaClicker";
+import { useSelector } from "react-redux";
+import { PuzaClick } from "./components/PuzaClick";
 
 export const Shop = () => {
+  const value = useSelector((state) => state.puzaCoinSlice.value);
+
   return (
     <div className="shop">
-      <PuzaClicker />
+      <PuzaClick value={value} />
     </div>
   );
 };

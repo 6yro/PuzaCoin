@@ -1,8 +1,16 @@
-import "./App.css";
-import { Home } from "./pages/Home";
+import "./App.scss";
+import { ClickArea } from "./components/ClickArea";
+import { Header } from "./components/Header";
+import { Shop } from "./components/Shop";
 
 function App() {
-  return <Home />;
+  return (
+    <div className="app">
+      <Header />
+      <ClickArea />
+      <Shop />
+    </div>
+  );
 }
 
 export default App;
