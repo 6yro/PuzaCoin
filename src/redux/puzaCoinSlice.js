@@ -21,6 +21,7 @@ export const puzaCoinSlice = createSlice({
     },
     buyPuzaClick: (state, action) => {
       state.value -= action.payload;
+      localStorage.setItem("value", state.value);
       state.clickStrength += 1;
       localStorage.setItem("clickStrength", state.clickStrength);
     },
