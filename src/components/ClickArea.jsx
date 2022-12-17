@@ -10,9 +10,11 @@ export const ClickArea = () => {
   };
 
   const clearResult = () => {
-    localStorage.clear("value");
-    localStorage.clear("clickStrength");
-    window.location.reload();
+    if (window.confirm("Вы уверены, что хотите очистить результат?")) {
+      localStorage.clear("value");
+      localStorage.clear("clickStrength");
+      window.location.reload();
+    }
   };
 
   return (
