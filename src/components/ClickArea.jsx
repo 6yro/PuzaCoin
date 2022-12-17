@@ -1,15 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { onClickCoin, setCoinValue } from "../redux/puzaCoinSlice";
+import { onClickCoin } from "../redux/puzaCoinSlice";
 
 export const ClickArea = () => {
   const dispatch = useDispatch();
-
-  React.useEffect(() => {
-    if (localStorage.getItem("value")) {
-      dispatch(setCoinValue(+localStorage.getItem("value")));
-    }
-  }, []);
 
   const addPuzaCoin = () => {
     dispatch(onClickCoin());
@@ -17,6 +11,7 @@ export const ClickArea = () => {
 
   const clearResult = () => {
     localStorage.clear("value");
+    localStorage.clear("clickStrength");
     window.location.reload();
   };
 
