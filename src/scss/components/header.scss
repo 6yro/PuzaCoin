@@ -1,0 +1,45 @@
+@keyframes header__title {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #f48200;
+  }
+  to {
+    text-shadow: 0 0 20px #f48200, 0 0 35px #f48200, 0 0 40px #f48200,
+      0 0 50px #f48200, 0 0 800px #f48200;
+  }
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    font-size: 64px;
+    color: #fff;
+    animation: 2s header__title alternate-reverse infinite;
+  }
+
+  &__scoreValue {
+    margin: 0;
+    padding: 10px;
+    font-size: 32px;
+    color: #fff;
+    text-shadow: #000 0 0 20px;
+
+    span {
+      color: #f49600;
+    }
+  }
+
+  &__clickStrength {
+    color: #fff;
+    margin: 0;
+
+    span {
+      color: #f49600;
+    }
+  }
+}

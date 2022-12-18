@@ -9,11 +9,17 @@ export const puzaCoinSlice = createSlice({
   name: "puzaCoin",
   initialState,
   reducers: {
-    setCoinValue: (state, action) => {
+    setCoinValue: (state) => {
       state.value = +localStorage.getItem("value");
     },
     setClickStrength: (state) => {
       state.clickStrength = +localStorage.getItem("clickStrength");
+    },
+    clearResult: (state) => {
+      state.value = 0;
+      state.clickStrength = 1;
+      localStorage.setItem("value", state.value);
+      localStorage.setItem("clickStrength", state.clickStrength);
     },
     onClickCoin: (state) => {
       state.value += state.clickStrength;
@@ -28,7 +34,12 @@ export const puzaCoinSlice = createSlice({
   },
 });
 
-export const { onClickCoin, setCoinValue, buyPuzaClick, setClickStrength } =
-  puzaCoinSlice.actions;
+export const {
+  onClickCoin,
+  setCoinValue,
+  buyPuzaClick,
+  setClickStrength,
+  clearResult,
+} = puzaCoinSlice.actions;
 
 export default puzaCoinSlice.reducer;

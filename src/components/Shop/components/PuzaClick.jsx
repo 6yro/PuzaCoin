@@ -13,7 +13,11 @@ export const PuzaClick = ({ value }) => {
   };
 
   return (
-    <button disabled={!isDisable} onClick={handleClick} className="puzaClick">
+    <button
+      disabled={!isDisable}
+      onClick={handleClick}
+      className="shop__puzaClick"
+    >
       <h1>Puza Click</h1>
       <p>Добавляет к вашему клику 1 ед. мощности!</p>
       <p>Цена: {price} PuzaCoin</p>

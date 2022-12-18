@@ -1,10 +1,11 @@
 import React from "react";
-import "./App.scss";
+import "./scss/app.scss";
 import { ClickArea } from "./components/ClickArea";
 import { Header } from "./components/Header";
 import { Shop } from "./components/Shop";
 import { useDispatch } from "react-redux";
 import { setClickStrength, setCoinValue } from "./redux/puzaCoinSlice";
+import { Footer } from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function App() {
       <Header />
       <ClickArea />
       <Shop />
+      <Footer />
     </div>
   );
 }
