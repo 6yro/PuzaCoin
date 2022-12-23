@@ -13,7 +13,7 @@ export const MiningFarm = ({ coinsValue, count, produce, price }) => {
     >
       <h6>Майнинг ферма</h6>
       <p>Цена: {price} PuzaCoin</p>
-      <p>Добавляет {produce} PuzaCoin к вашему клику</p>
+      <p>Добавляет {produce} PuzaCoin в секунду</p>
       <p>Имеется:{count}</p>
     </button>
   );
