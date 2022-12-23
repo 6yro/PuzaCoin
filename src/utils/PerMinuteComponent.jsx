@@ -1,15 +1,13 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addEarnedCoins } from "../redux/slice";
+import { saveLocalStorage } from "../redux/slice";
 
-export const CycleComponent = () => {
+export const PerMinute = () => {
   const dispatch = useDispatch();
   const [time, setTime] = React.useState();
 
   setTimeout(() => {
     setTime(Math.random());
-  }, 1000);
-
-  dispatch(addEarnedCoins());
-  console.log("rerender");
+    dispatch(saveLocalStorage());
+  }, 60000);
 };

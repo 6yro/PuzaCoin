@@ -4,15 +4,16 @@ import { ClickArea } from "./components/ClickArea";
 import { Header } from "./components/Header";
 import { Shop } from "./components/Shop";
 import { useDispatch } from "react-redux";
-import { setLocalStorage } from "./redux/slice";
+import { setState } from "./redux/slice";
 import { Footer } from "./components/Footer";
-import { CycleComponent } from "./components/CycleComponent";
+import { PerSecond } from "./utils/PerSecondComponent";
+import { PerMinute } from "./utils/PerMinuteComponent";
 
 function App() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    dispatch(setLocalStorage());
+    dispatch(setState());
   }, []);
 
   return (
@@ -21,7 +22,8 @@ function App() {
       <ClickArea />
       <Shop />
       <Footer />
-      <CycleComponent />
+      <PerSecond />
+      {/* <PerMinute /> */}
     </div>
   );
 }

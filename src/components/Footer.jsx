@@ -1,19 +1,26 @@
 import React from "react";
-import { clearLocalStorage } from "../redux/slice";
+import { clearLocalStorage, saveLocalStorage } from "../redux/slice";
 import { useDispatch } from "react-redux";
 
 export const Footer = () => {
   const dispatch = useDispatch();
 
-  const handleClick = () => {
+  const handleClearResult = () => {
     if (window.confirm("Вы уверены, что хотите очистить результат?")) {
       dispatch(clearLocalStorage());
     }
   };
 
+  const handleSaveResult = () => {
+    dispatch(saveLocalStorage());
+  };
+
   return (
     <footer className="footer">
-      <button onClick={handleClick} className="footer__clearResultBtn">
+      <button onClick={handleSaveResult} className="footer__clearResultBtn">
+        Сохранить результат
+      </button>
+      <button onClick={handleClearResult} className="footer__clearResultBtn">
         Очистить результат
       </button>
       <a
