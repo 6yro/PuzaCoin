@@ -1,17 +1,16 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { onClickCoin } from "../redux/puzaCoinSlice";
+import { onClickCoin } from "../redux/slice";
 
 export const ClickArea = () => {
   const dispatch = useDispatch();
 
-  const addPuzaCoin = () => {
-    dispatch(onClickCoin());
-  };
-
   return (
     <section className="clickArea">
-      <button onClick={addPuzaCoin} className="clickArea__btn" />
+      <button
+        onClick={() => dispatch(onClickCoin())}
+        className="clickArea__btn"
+      />
     </section>
   );
 };

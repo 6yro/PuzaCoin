@@ -1,19 +1,19 @@
 import React from "react";
-import { clearResult } from "../redux/puzaCoinSlice";
+import { clearLocalStorage } from "../redux/slice";
 import { useDispatch } from "react-redux";
 
 export const Footer = () => {
   const dispatch = useDispatch();
 
-  const clearResultClick = () => {
+  const handleClick = () => {
     if (window.confirm("Вы уверены, что хотите очистить результат?")) {
-      dispatch(clearResult());
+      dispatch(clearLocalStorage());
     }
   };
 
   return (
     <footer className="footer">
-      <button onClick={clearResultClick} className="footer__clearResultBtn">
+      <button onClick={handleClick} className="footer__clearResultBtn">
         Очистить результат
       </button>
       <a

@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import puzaCoinSlice from "./puzaCoinSlice";
+import slice from "./slice";
 
 export const store = configureStore({
-  reducer: { puzaCoinSlice },
+  reducer: { slice },
 });

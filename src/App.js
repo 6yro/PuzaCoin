@@ -4,19 +4,15 @@ import { ClickArea } from "./components/ClickArea";
 import { Header } from "./components/Header";
 import { Shop } from "./components/Shop";
 import { useDispatch } from "react-redux";
-import { setClickStrength, setCoinValue } from "./redux/puzaCoinSlice";
+import { setLocalStorage } from "./redux/slice";
 import { Footer } from "./components/Footer";
+import { CycleComponent } from "./components/CycleComponent";
 
 function App() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    if (localStorage.getItem("value")) {
-      dispatch(setCoinValue());
-    }
-    if (localStorage.getItem("clickStrength")) {
-      dispatch(setClickStrength());
-    }
+    dispatch(setLocalStorage());
   }, []);
 
   return (
@@ -25,6 +21,7 @@ function App() {
       <ClickArea />
       <Shop />
       <Footer />
+      <CycleComponent />
     </div>
   );
 }
