@@ -4,7 +4,7 @@ const initialState = {
   coinsValue: 0,
   reinforcedFinger: { count: 1, produce: 1, price: 15 },
   miningFarm: { count: 0, produce: 4, price: 100 },
-  bank: { count: 0, produce: 10, price: 500 },
+  bank: { count: 0, produce: 10, price: 300 },
 };
 
 export const slice = createSlice({
@@ -49,8 +49,14 @@ export const slice = createSlice({
       state.miningFarm.count += 1;
       state.miningFarm.price = Math.round(state.miningFarm.price * 1.3);
     },
+    buyBank: (state) => {
+      state.coinsValue -= state.bank.price;
+      state.bank.count += 1;
+      state.bank.price = Math.round(state.bank.price * 1.3);
+    },
     addEarnedCoins: (state) => {
       state.coinsValue += state.miningFarm.count * state.miningFarm.produce;
+      state.coinsValue += state.bank.count * state.bank.produce;
     },
   },
 });
@@ -61,6 +67,7 @@ export const {
   buyReinforcedFinger,
   setLocalStorage,
   buyMiningFarm,
+  buyBank,
   addEarnedCoins,
 } = slice.actions;
 

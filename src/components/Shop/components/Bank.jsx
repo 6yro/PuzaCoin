@@ -1,19 +1,19 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { buyMiningFarm } from "../../../redux/slice";
+import { buyBank } from "../../../redux/slice";
 
-export const MiningFarm = ({ coinsValue, count, produce, price }) => {
+export const Bank = ({ coinsValue, count, produce, price }) => {
   const dispatch = useDispatch();
 
   return (
     <button
       disabled={coinsValue < price}
-      onClick={() => dispatch(buyMiningFarm())}
+      onClick={() => dispatch(buyBank())}
       className="shop__item"
     >
-      <h6>Майнинг ферма</h6>
+      <h6>Банк</h6>
       <p>Цена: {price} PuzaCoin</p>
-      <p>Добавляет {produce} PuzaCoin к вашему клику</p>
+      <p>Добавляет {produce} PuzaCoin в секунду</p>
       <p>Имеется:{count}</p>
     </button>
   );

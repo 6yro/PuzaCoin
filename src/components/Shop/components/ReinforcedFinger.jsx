@@ -13,7 +13,7 @@ export const ReinforcedFinger = ({ coinsValue, count, produce, price }) => {
     >
       <h6>Укрепленный пальчик</h6>
       <p>Цена: {price} PuzaCoin</p>
-      <p>Добавляет {produce} PuzaCoin к вашему клику</p>
+      <p>Добавляет {produce} PuzaCoin к силе вашего клика</p>
       <p>Имеется:{count}</p>
     </button>
   );
