@@ -13,39 +13,11 @@ export const slice = createSlice({
   name: "slice",
   initialState,
   reducers: {
-    setState: (state) => {
-      state.coinsValue = +localStorage.getItem("coinsValue");
-      state.coinsPerSecond = +localStorage.getItem("coinsPerSecond");
-      state.reinforcedFinger.count = +localStorage.getItem(
-        "reinforcedFingerCount"
-      );
-      state.reinforcedFinger.price = +localStorage.getItem(
-        "reinforcedFingerPrice"
-      );
-      state.videoCard.count = +localStorage.getItem("videoCardCount");
-      state.videoCard.price = +localStorage.getItem("videoCardPrice");
-      state.miningFarm.count = +localStorage.getItem("miningFarmCount");
-      state.miningFarm.price = +localStorage.getItem("miningFarmPrice");
-      state.bank.count = +localStorage.getItem("bankCount");
-      state.bank.price = +localStorage.getItem("bankPrice");
+    setState: () => {
+      return JSON.parse(localStorage.getItem("state"));
     },
     saveLocalStorage: (state) => {
-      localStorage.setItem("coinsValue", state.coinsValue);
-      localStorage.setItem("coinsPerSecond", state.coinsPerSecond);
-      localStorage.setItem(
-        "reinforcedFingerCount",
-        state.reinforcedFinger.count
-      );
-      localStorage.setItem(
-        "reinforcedFingerPrice",
-        state.reinforcedFinger.price
-      );
-      localStorage.setItem("videoCardCount", state.videoCard.count);
-      localStorage.setItem("videoCardPrice", state.videoCard.price);
-      localStorage.setItem("miningFarmCount", state.miningFarm.count);
-      localStorage.setItem("miningFarmPrice", state.miningFarm.price);
-      localStorage.setItem("bankCount", state.bank.count);
-      localStorage.setItem("bankPrice", state.bank.price);
+      localStorage.setItem("state", JSON.stringify(state));
     },
     clearLocalStorage: () => {
       localStorage.clear();

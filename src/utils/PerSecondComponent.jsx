@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addEarnedCoins, saveLocalStorage } from "../redux/slice";
+import { addEarnedCoins } from "../redux/slice";
 
 export const PerSecond = () => {
   const dispatch = useDispatch();
@@ -8,8 +8,6 @@ export const PerSecond = () => {
 
   setTimeout(() => {
     setTime(Math.random());
-    dispatch(saveLocalStorage());
+    dispatch(addEarnedCoins());
   }, 1000);
-
-  dispatch(addEarnedCoins());
 };

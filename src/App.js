@@ -13,18 +13,22 @@ function App() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    dispatch(setState());
+    if (localStorage.getItem("state")) {
+      dispatch(setState());
+    }
   }, []);
 
   return (
-    <div className="app">
-      <Header />
-      <ClickArea />
-      <Shop />
-      <Footer />
+    <>
+      <div className="app">
+        <Header />
+        <ClickArea />
+        <Shop />
+        <Footer />
+      </div>
       <PerSecond />
-      {/* <PerMinute /> */}
-    </div>
+      <PerMinute />
+    </>
   );
 }
 
