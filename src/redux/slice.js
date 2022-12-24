@@ -23,6 +23,9 @@ export const slice = createSlice({
       localStorage.clear();
       return initialState;
     },
+    cheatCoins: (state, action) => {
+      state.coinsValue = action.payload;
+    },
     onClickCoin: (state) => {
       state.coinsValue +=
         state.reinforcedFinger.count * state.reinforcedFinger.produce;
@@ -64,6 +67,7 @@ export const {
   onClickCoin,
   saveLocalStorage,
   clearLocalStorage,
+  cheatCoins,
   buyReinforcedFinger,
   setState,
   buyVideoCard,

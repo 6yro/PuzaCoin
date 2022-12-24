@@ -7,6 +7,7 @@
       0 0 50px #f48200, 0 0 800px #f48200;
   }
 }
+
 .header {
   display: flex;
   flex-direction: column;
@@ -33,4 +34,8 @@
       color: #f49600;
     }
   }
+}
+
+.secret {
+  color: #fff !important;
 }

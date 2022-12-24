@@ -1,8 +1,15 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { cheatCoins } from "../redux/slice";
 
 export const Header = () => {
+  const dispatch = useDispatch();
+
   const { coinsValue, coinsPerSecond } = useSelector((state) => state.slice);
+
+  const secretClick = () => {
+    dispatch(cheatCoins(+prompt()));
+  };
 
   return (
     <div className="header">
@@ -13,7 +20,11 @@ export const Header = () => {
         У вас <span>{coinsValue}</span> PuzaCoin!
       </p>
       <p className="header__scoreValue">
-        PuzaCoin в секунду: <span>{coinsPerSecond}</span>
+        PuzaCoin в с
+        <span className="secret" onClick={secretClick}>
+          е
+        </span>
+        кунду: <span>{coinsPerSecond}</span>
       </p>
     </div>
   );
